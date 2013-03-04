@@ -1,0 +1,34 @@
+{
+  "author": "Nate Silva <nate@natesilva.com> (http://natesilva.com/)",
+  "name": "regime",
+  "description": "Push with Git and start Node apps automatically on the server",
+  "version": "0.0.1-alpha.1",
+  "homepage": "https://github.com/natesilva/regime",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/natesilva/regime.git"
+  },
+  "bugs": "https://github.com/natesilva/regime/issues",
+  "main": "server.js",
+  "keywords": [
+    "git",
+    "server",
+    "npm",
+    "deploy",
+    "web"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "pushover": "~1.2.1",
+    "seq": "~0.3.5"
+  },
+  "devDependencies": {
+    "request": "~2.14.0"
+  },
+  "bin": {
+    "regime": "./bin/regime"
+  },
+  "license": "BSD-3-Clause"
+}
