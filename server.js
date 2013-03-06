@@ -2,6 +2,7 @@ var http = require('http');
 var url = require('url');
 var path = require('path');
 var pushover = require('pushover');
+var log = require('./lib/log.js');
 
 var reposDir =
   process.env.REPOS || process.argv[2] || path.join(__dirname, 'repos');
@@ -19,7 +20,7 @@ customActions.reload(reposDir);
 require('./lib/startAll.js')(reposDir);
 
 var server = http.createServer();
-server.on('error', function(err) { console.error(err); });
+server.on('error', function(err) { log.error(err); });
 
 server.on('request', function(req, res) {
   var parts = url.parse(req.url);
@@ -39,6 +40,6 @@ server.on('request', function(req, res) {
 
 server.listen(process.env.PORT || 2677, function() {
   var address = server.address();
-  console.log('>>> regime is listening on', address.family, 'port',
+  log.info('>>> regime is listening on', address.family, 'port',
     address.port);
 });
