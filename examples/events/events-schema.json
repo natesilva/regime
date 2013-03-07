@@ -1,0 +1,15 @@
+{
+    "title": "events.json JSON Schema",
+    "description": "This file serves as documentation for the events.json file format",
+    "type": "object",
+    "properties": {
+        "configChanged": {
+            "type": "string",
+            "description": "Command to run when regime’s configuration has changed."
+        },
+        "appCrashed": {
+            "type": "string",
+            "description": "Command to run when a crash of a monitored app is detected."
+        }
+    }
+}
