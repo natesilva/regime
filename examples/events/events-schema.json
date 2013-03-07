@@ -4,12 +4,20 @@
     "type": "object",
     "properties": {
         "configChanged": {
-            "type": "string",
+            "$ref": "#/definitions/stringOrArrayOfStrings",
             "description": "Command to run when regime’s configuration has changed."
         },
         "appCrashed": {
-            "type": "string",
+            "$ref": "#/definitions/stringOrArrayOfStrings",
             "description": "Command to run when a crash of a monitored app is detected."
+        }
+    },
+    "definitions": {
+        "stringOrArrayOfStrings": {
+            "anyOf": [
+                { "type": "string" },
+                { "type": "array", "minItems": 1, "items": { "type": "string" } }
+            ]
         }
     }
 }
