@@ -2,7 +2,7 @@
   "author": "Nate Silva <nate@natesilva.com> (http://natesilva.com/)",
   "name": "regime",
   "description": "Push with Git and start Node apps automatically on the server",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "homepage": "https://github.com/natesilva/regime",
   "repository": {
     "type": "git",
