@@ -1,15 +1,23 @@
 {
-    "title": "events.json JSON Schema",
-    "description": "This file serves as documentation for the events.json file format",
+    "title": "actions.json JSON Schema",
+    "description": "This file serves as documentation for the actions.json file format",
     "type": "object",
     "properties": {
+        "gitAuth": {
+            "$ref": "#/definitions/stringOrArrayOfStrings",
+            "description": "Commands to auth git users (exit 0 for success; non-zero for failure)."
+        },
+        "apiAuth": {
+            "$ref": "#/definitions/stringOrArrayOfStrings",
+            "description": "Commands to auth API users (exit 0 for success; non-zero for failure)."
+        },
         "configChanged": {
             "$ref": "#/definitions/stringOrArrayOfStrings",
-            "description": "Command to run when regime’s configuration has changed."
+            "description": "Commands to run when regime’s configuration has changed."
         },
         "appCrashed": {
             "$ref": "#/definitions/stringOrArrayOfStrings",
-            "description": "Command to run when a crash of a monitored app is detected."
+            "description": "Commands to run when a crash of a monitored app is detected."
         }
     },
     "definitions": {

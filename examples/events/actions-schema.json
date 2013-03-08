@@ -1,0 +1,23 @@
+{
+    "title": "events.json JSON Schema",
+    "description": "This file serves as documentation for the events.json file format",
+    "type": "object",
+    "properties": {
+        "configChanged": {
+            "$ref": "#/definitions/stringOrArrayOfStrings",
+            "description": "Command to run when regime’s configuration has changed."
+        },
+        "appCrashed": {
+            "$ref": "#/definitions/stringOrArrayOfStrings",
+            "description": "Command to run when a crash of a monitored app is detected."
+        }
+    },
+    "definitions": {
+        "stringOrArrayOfStrings": {
+            "anyOf": [
+                { "type": "string" },
+                { "type": "array", "minItems": 1, "items": { "type": "string" } }
+            ]
+        }
+    }
+}

@@ -25,16 +25,16 @@ server.on('error', function(err) { log.error(err); });
 server.on('request', function(req, res) {
   var parts = url.parse(req.url);
   if (parts.pathname === '/status') {
-    customActions.middleware.admin(req, res, require('./lib/onStatus.js'));
+    customActions.apiAuth(req, res, require('./lib/onStatus.js'));
   }
   else if (parts.pathname.match(/^\/start\//)) {
-    customActions.middleware.admin(req, res, require('./lib/onStart.js'));
+    customActions.apiAuth(req, res, require('./lib/onStart.js'));
   }
   else if (parts.pathname.match(/^\/stop\//)) {
-    customActions.middleware.admin(req, res, require('./lib/onStop.js'));
+    customActions.apiAuth(req, res, require('./lib/onStop.js'));
   }
   else {
-    customActions.middleware.repos(req, res, repos.handle.bind(repos));
+    customActions.gitAuth(req, res, repos.handle.bind(repos));
   }
 });
 
